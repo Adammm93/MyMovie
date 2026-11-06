@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyMovie - Discover Movies</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="brand">
+            <img src="assets/logo.png" alt="MyMovie Logo">
+            <h1>MyMovie</h1>
+        </div>
+
+        <p>Your personal movie discovery and watchlist application.</p>
+
+        <nav>
+            <button id="discoverNav" class="nav-button active">
+                Discover Movies
+            </button>
+
+            <button id="watchlistNav" class="nav-button">
+                My Watchlist
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- DISCOVER PAGE -->
+        <section id="discoverPage">
+
+            <div class="hero-banner">
+                <img src="assets/banner.png" alt="Discover Your Next Movie">
+            </div>
+
+            <div class="welcome-card">
+                <h2>Discover Movies</h2>
+                <p>Search for movies or browse movies by genre.</p>
+
+                <form id="searchForm">
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Enter a movie title..."
+                        required
+                    >
+
+                    <button type="submit" id="searchButton">
+                        Search Movies
+                    </button>
+                </form>
+
+                <hr>
+
+                <h3>Browse by Genre</h3>
+                <p>Choose a genre to discover popular movies.</p>
+
+                <div class="genre-controls">
+                    <select id="genreSelect" aria-label="Select movie genre">
+                        <option value="">Select a genre</option>
+                        <option value="28">Action</option>
+                        <option value="12">Adventure</option>
+                        <option value="16">Animation</option>
+                        <option value="35">Comedy</option>
+                        <option value="80">Crime</option>
+                        <option value="99">Documentary</option>
+                        <option value="18">Drama</option>
+                        <option value="10751">Family</option>
+                        <option value="14">Fantasy</option>
+                        <option value="36">History</option>
+                        <option value="27">Horror</option>
+                        <option value="10402">Music</option>
+                        <option value="9648">Mystery</option>
+                        <option value="10749">Romance</option>
+                        <option value="878">Science Fiction</option>
+                        <option value="53">Thriller</option>
+                        <option value="10752">War</option>
+                    </select>
+
+                    <button type="button" id="genreButton">
+                        Browse Genre
+                    </button>
+
+                    <button type="button" id="recommendButton">
+                        Recommend Movies
+                    </button>
+                </div>
+
+                <p id="statusMessage" role="status">
+                    Enter a movie title or select a genre to get started.
+                </p>
+            </div>
+
+            <div id="movieResults" class="movie-grid"></div>
+        </section>
+
+        <!-- WATCHLIST PAGE -->
+        <section id="watchlistPage" hidden>
+            <div class="welcome-card">
+                <h2>My Watchlist</h2>
+                <p>Your saved movies. Your watchlist is stored locally.</p>
+
+                <div id="watchlistSummary">
+                    <p>Plan to Watch: <strong id="planCount">0</strong></p>
+                    <p>Watching: <strong id="watchingCount">0</strong></p>
+                    <p>Watched: <strong id="watchedCount">0</strong></p>
+                    <p>Total Movies: <strong id="totalCount">0</strong></p>
+                </div>
+
+                <p id="watchlistMessage" role="status"></p>
+            </div>
+
+            <div id="watchlistResults" class="movie-grid"></div>
+        </section>
+
+        <!-- MOVIE DETAILS PAGE -->
+        <section id="detailsPage" hidden>
+            <div class="welcome-card">
+                <button id="backButton">← Back to Discover</button>
+                <p id="detailsStatus" role="status"></p>
+                <div id="movieDetails"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>MyMovie</p>
+        <p>Movie data provided by TMDB.</p>
+    </footer>
+
+    <script src="renderer.js"></script>
+</body>
+
+</html>
